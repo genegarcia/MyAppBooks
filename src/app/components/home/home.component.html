@@ -1,0 +1,43 @@
+  <div class="row">
+    <div class="col-md-3">  
+      <button type="button" class="btn btn-success" (click)="addBook()"> Añadir Libro </button>
+    </div>
+    <div class="col-md-3">
+        <form [formGroup]="searchForm" class="form-inline">
+            <input class="form-control" formControlName="search" type="search" placeholder="Buscar libro por Id" aria-label="Search">
+            <button class="btn btn-outline-success" type="text" placeholder="Buscar" (click)="searchBook()" >Buscar</button>
+        </form>
+    </div>
+    <div class="col-md-6"> &nbsp;</div>
+  </div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="hidden">#</th>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Resumen</th>
+      <th>Autor</th>
+      <th>Edicion</th>
+      <th *ngIf="isLogged">Editar</th>
+      <th *ngIf="isLogged">Eliminar</th>
+
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let book of books index as i">
+          <th scope="row"> {{i+1}}</th>
+          <td>{{book.id}}</td>
+          <td>{{book.nombre}}</td>
+          <td>{{book.resumen}}</td>
+          <td>{{book.autor}}</td>
+          <td>{{book.edicion}}</td>
+          <td *ngIf="isLogged">
+            <button class="btn btn-success classEdit" (click)="editBook(book.id)" > Editar</button>
+          </td>
+          <td *ngIf="isLogged">
+              <button class="btn btn-danger" (click)="deleteBook(book.id)"> Eliminar </button>
+          </td>
+        </tr>
+    </tbody>
+  </table>

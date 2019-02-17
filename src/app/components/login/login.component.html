@@ -1,0 +1,17 @@
+<form #formLogin="ngForm" (ngSubmit)="onLogin(formLogin)" >
+    <h6 class="" *ngIf="!isError">Pago Facil</h6>
+    <div class="alert alert-danger" role="alert" *ngIf="isError">
+        Something is wrong!
+    </div>
+    <div class="container">
+        <div>
+          <label for="uname"><b>Usuario</b></label>
+          <input type="text" id="user" placeholder="Usuario" name="user" [(ngModel)]="user.username" required>
+        </div>
+        <div>
+            <label for="psw"><b>Contrasena</b></label>
+            <input type="password" id="password" placeholder="Contrasena" name="password" [(ngModel)]="user.password" required>
+        </div>
+        <button class="btn btn-success" type="submit">Ingresar</button>
+    </div>
+</form>

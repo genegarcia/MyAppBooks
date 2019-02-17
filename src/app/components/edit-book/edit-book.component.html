@@ -1,0 +1,29 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Editar libro</h2>
+  <form class="container" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="edicion">Edition:</label>
+        <input type="text" formControlName="edicion" placeholder="edition" name="edicion" class="form-control" id="edicion">
+      </div>
+      <div class="form-group">
+        <label for="resumen">REsumen Book:</label>
+        <input type="text" formControlName="resumen" placeholder="resumen" name="resumen" class="form-control" id="resumen">
+      </div>
+      <div class="form-group">
+        <label for="autor">Author Book:</label>
+        <input type="text" formControlName="autor" placeholder="autor" name="autor" class="form-control" id="autor">
+      </div>
+      <div class="form-group">
+        <label for="nombre">Name Book:</label>
+        <input type="text" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre">
+      </div>
+      <div class="row">
+          <div class=".col-md-6">
+            <button class="btn btn-success" type="submit">Agregar libro</button>
+          </div>
+          <div class=".col-md-6">
+            <button class="btn btn-danger" type="button" (click)="cancelar()">Cancelar</button>
+          </div>
+        </div>
+    </form>
+</div> 
